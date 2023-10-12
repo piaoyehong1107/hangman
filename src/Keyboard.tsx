@@ -41,7 +41,11 @@ export function Keyboard() {
         >
             {KEYS.map(key => {
                 return (
-                    <button className={`${styles.btn} ${styles.active}`} key={key}>
+                    <button 
+                        // disabled 
+                        className={`${styles.btn}`} 
+                        key={key}
+                    >
                         {key}
                     </button>
                 )
