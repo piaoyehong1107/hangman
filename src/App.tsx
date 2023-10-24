@@ -22,6 +22,7 @@ function App() {
       if (guessedLetters.includes(letter) || isLoser || isWinner) return
       setGuessedLetters(currentLetters => [...currentLetters, letter])
   },[guessedLetters, isWinner, isLoser])
+  // only re-renders if guessedLetters or isWinner or isLoser changes
   
   // console.log(wordToGuess)
 
@@ -37,7 +38,8 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler)
     }
-  }, [guessedLetters])
+  }, [guessedLetters]) 
+  // only re-run the effect if guessedletters changes
 
   useEffect(() => {
     const handler = (e: KeyboardEvent)=> {
